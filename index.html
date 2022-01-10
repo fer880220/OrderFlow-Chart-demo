@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <link rel="icon" href="http://localhost:3000/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000">
+    <meta name="description" content="Web site created using create-react-app">
+    <link rel="apple-touch-icon" href="http://localhost:3000/logo192.png">
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="http://localhost:3000/manifest.json">
+    <!--
+      Notice the use of  in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>React App</title>
+  <style></style><style></style><style type="text/css">body {
+  font: 14px "Century Gothic", Futura, sans-serif;
+  margin: 5px;
+}
+
+h3{
+text-align: center;
+}
+
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.overlay { 
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(1, 1, 1, 0.7);
+  transition: opacity 500ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index:3;
+}
+
+.overlay:target{
+  visibility: visible;
+  opacity: 1;
+}
+
+.text-value{
+	color: #607D8B;
+}
+
+#popupBody{
+	width: 46%;
+	padding: 2%;	
+	border-radius: 15px;
+	/*box-shadow: 0 0 5px #CCC;*/
+	background: #EEEEEE;
+	color: #2196F3;
+	position: relative;
+	margin: 2% auto;  
+	transition: all 5s ease-in-out;
+}
+
+#cerrar{
+	position: absolute;
+top: 5px;
+right: 5px;
+font-size: 16px;
+fotn-weight: bold;
+text-decoration: none;
+color: #009688;
+background: #EEEEEE;
+transition: all 200ms;
+}
+
+.selectClass{ 
+minHeight: 40px; 
+display: flex;
+flexDirection: row;
+alignItems: center;
+paddingLeft: 10px;
+
+}
+
+.menuCSS3 ul {
+	display: inline-flex;
+	/*padding: 0;
+	margin: 0;*/
+	list-style: none;
+		
+}
+
+.menuCSS3 a {
+	display: block;
+	padding: 8px;/*2em;*/
+	background-color: #607D8B ;
+	/*text-decoration: none;*/
+	color: #FFC107 ;
+}
+.menuCSS3 a:hover {
+	background-color: #CC673B;
+}
+.menuCSS3 ul li ul {
+	display: none;
+}
+.menuCSS3 ul li a:hover + ul, .menuCSS3 ul li ul:hover {
+	display: block;
+}
+
+.los-de-derecha {
+	right: 1px;
+	float:right;
+	background-color: rgba(0,0,0,0.9);
+	
+}
+
+.los-de-arriba{
+	height: 50%; width:100%;
+	background-color: #607D8B ;
+	color:white;
+	/*font-weight: bold;*/
+	font-size: 20px;
+}
+
+.class-neutral{
+	color: rgba(200,255,255, 1);
+}
+.class-buy{
+	color: rgba(0,255,0, 1);
+}
+.class-sell{
+	color: rgba(255,0,0, 1);
+}
+
+ol, ul {
+  padding-left: 30px;
+}
+
+.board-row:after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+.status {
+  margin-bottom: 10px;
+}
+
+.square {
+  background: #fff;
+  border: 1px solid #999;
+  float: left;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 34px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 34px;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.kbd-navigation .square:focus {
+  background: #ddd;
+}
+
+.game {
+  display: flex;
+  flex-direction: row;
+}
+
+.game-info {
+  margin-left: 20px;
+}
+
+#chartContainer{ width: 1000 ; height: 1000; background:rgba(255 , 0,0 , 0);} 
+#chartContainer:-webkit-full-screen { width: 100%; height: 100%; }
+#chartContainer:-moz-full-screen { width: 100% ; height: 100%;}
+#chartContainer:-ms-full-screen { width: 100% ; height: 100%;}
+#chartContainer:-o-full-screen { width: 100% ; height: 100%;}
+.boton-rosa{color: rgba(200,0,0, 1);} 
+/*#menu1{align: right}*/
+
+</style></head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"><div><div class="los-de-arriba" id="menu1" align="right"><p align="justify">Bienvenido
+ a la versión 0.1 de OrderFlow-Chart. Ahora tienes acceso al indicador 
+Order Flow en la temporalidad de 1m. En el futuro se harán mejoras, 
+dependiendo de la disponibilidad de tiempo de los desarrolladores. 
+Puedes convertirte en colaborador de este proyecto a través de una 
+donación. Para saber sobre Order Flow visita <a href="https://www.armagafx.com/" target="_blank" class="los-de-arriba">ArmagaFX</a></p><nav class="menuCSS3"><ul><li><a href="#">Ocultar</a></li><li><a href="https://www.linkedin.com/in/fernando-fonseca-acosta-1aab08a7" target="_blank">Contacto</a></li><li><a href="#popDonate">♥Donar</a><div id="popDonate" class="overlay"><div id="popupBody"><h3>Así ayudarás a este proyecto</h3><b>Detalles de la donación a: jovtal22@gmail.com</b><a id="cerrar" href="#">Cerrar</a><div class="popupContent"><div class="_GJEnH _fxZAfT _gTXaLY _jQJxyU scid-fUNiMB"><div class="_ldimbY _kXsTsi _fXfOg _gDrjVA _jVkGRV _jwQcuF _fJjMAS _hniQLS _gknbab _grLleg _fbjrRb _fhaFnU _fLkDWM _gQTUlh _fZMTUa _ckYojt _gonZcB _kROsiw _bGUEHj _hiyybE _lyLPc _gTXaLY _cnMfXN _fRoGVu _kznUTl _jMPXGR scid-kxWwxl"><div><div class="_intGNt _JcngB _gknbab _fXfOg _bMRDnc _kkycZw _gDrjVA _CfIuL _czkAeE _iuJAGH _hjpHQY scid-epYvXg">Choose option...</div></div><div class="_kpTYNP _lpvmmI scid-ScOtm"><div class="_dGVuyN _kROsiw _bGUEHj _hiyybE _lyLPc _fYRoKZ _fiIwSy _cZvlkp _dNepuZ _whpfw _hYbLMd _czVPNi _YBfik _kaphSq _bBpbvh _iNhUba _fVORoy _dEhTvi _cnMfXN _fRoGVu _kznUTl _jMPXGR scid-iMRNzm"></div></div></div></div></div><div><table><tr><td><br><br><br></td><td id="divAddr" style="padding: 0px 40px 30px;" hidden=""><div>address:</div><div class="text-value" id="pAddr"></div><button id="btnCpyAddr" style="background: transparent none repeat scroll 0% 0%; color: green; border: medium none;" hidden="">copiar</button></td><td id="divTag" style="padding: 0px 40px 30px;" hidden=""><div>Tag:</div><div id="pTag" class="text-value"></div><button id="btnCpyTag" style="background: transparent none repeat scroll 0% 0%; color: green; border: medium none;">copiar</button></td></tr></table></div></div></div></li></ul></nav></div><table><tr><td><select id="brokerSelector"><option value="BinanceFutures" selected="selected">BinanceFutures</option></select><div class="elems-query"><i><input list="pairsOfCoins" name="myBrowser" id="pairSelector" disabled="disabled"><datalist id="pairsOfCoins"></datalist></i><select name="select" id="tfselect"><option value="1m" selected="selected">1m</option><option value="3m">3m</option><option value="5m">5m</option></select><n><select name="select" id="vmselect"><option value="one" selected="selected">one</option><option value="two">two</option><option value="delta">delta</option></select></n><n><select id="advSelector"><option value="Candles" selected="selected">Candles</option><option value="Order Flow">Order Flow</option></select><n id="vpOptions" hidden=""><input id="nOfCandItem" value="1" hidden="">Cluster size:<select id="pipSizeItem"><option value="1" selected="selected">1</option><option value="2">2</option><option value="3">3</option></select></n></n></div><div id="chartContainer"><div class="tv-lightweight-charts" style="overflow: hidden; width: 1000px; height: 500px; -moz-user-select: none;"><table style="height: 500px; width: 1000px;" cellspacing="0"><tr><td style="padding: 0px;"></td><td style="padding: 0px; position: relative; width: 948px; height: 474px;"><div style="width: 100%; height: 100%; position: relative; overflow: hidden;"><canvas style="width: 948px; height: 474px; position: absolute; z-index: 1; left: 0px; top: 0px;" width="948" height="474"></canvas><canvas style="width: 948px; height: 474px; position: absolute; z-index: 2; left: 0px; top: 0px;" width="948" height="474"></canvas></div></td><td style="padding: 0px;"><div style="height: 474px; overflow: hidden; width: 52px; left: 0px; position: relative; min-width: 52px;"><canvas style="width: 52px; height: 474px; position: absolute; z-index: 1; left: 0px; top: 0px;" width="52" height="474"></canvas><canvas style="width: 52px; height: 474px; position: absolute; z-index: 2; left: 0px; top: 0px;" width="52" height="474"></canvas></div></td></tr><tr><td style="padding: 0px;"></td><td style="height: 26px; padding: 0px; width: 948px;"><div style="width: 100%; height: 100%; position: relative; overflow: hidden;"><canvas style="width: 948px; height: 26px; position: absolute; z-index: 1; left: 0px; top: 0px;" width="948" height="26"></canvas><canvas style="width: 948px; height: 26px; position: absolute; z-index: 2; left: 0px; top: 0px;" width="948" height="26"></canvas></div></td><td style="padding: 0px;"><div style="width: 52px; height: 26px; overflow: hidden; min-width: 52px;"><canvas style="width: 52px; height: 26px;" width="52" height="26"></canvas></div></td></tr></table></div></div></td><td id="jaja" class="los-de-derecha"><div id="candleInfo">"INFO</div><div><i id="volumenTotal" class="class-neutral"> VT </i><i id="volumenSell" class="class-sell"> VSELL </i><i id="volumenBuy" class="class-buy"> VBUY </i></div><div><i class="class-neutral">________</i><i id="percentSell" class="class-sell"> VSELL </i><i id="percentBuy" class="class-buy"> VBUY </i></div><div><i id="volumenDelta"> VT </i><i id="percentDelta"> VSELL </i></div><div id="numbTrades" class="class-neutral">-</div><div id="volPerTrade" class="class-neutral">-</div><div id="indicadorNet" class="class-neutral">-</div></td></tr><tr><input class="boton-rosa" value="full screen" type="button"></tr></table></div></div>
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  <script src="index_files/bundle.js"></script><script src="index_files/0.js"></script><script src="index_files/main.js"></script>
+
+</body></html>
