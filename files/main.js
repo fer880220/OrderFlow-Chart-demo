@@ -395,7 +395,7 @@ class DataProviderBase {
     this.func = null; //función que será invocada después de la solicitud
 
     this.symbolPrev = null;
-    this.webSocket = new WebSocket('ws://fer88k892.govant');
+    //this.webSocket = new WebSocket('ws://fer88k892.govant');
   }
 
   getAllPairs(backRetriver) {}
@@ -514,7 +514,7 @@ class BinanceFuturesDataProvider extends DataProviderBase {
   }
 
   getCandles(symbol, timeFrom, timeTo, timeFrame, volumeMode, fstreamDelegate) {
-    this.webSocket.close();
+    if(this.webSocket)this.webSocket.close();
     this.reset(symbol);
     var query = this._private_url_base + `/fapi/v1/klines?symbol=${symbol}` + `&interval=${timeFrame}&startTime=${timeFrom}&endTime=${timeTo}`;
     var myRequest = new XMLHttpRequest();
@@ -552,7 +552,6 @@ class BinanceFuturesDataProvider extends DataProviderBase {
       this.klines = klines;
       if (this.func) this.func(klines, volume, mKlines);
       this.webSocket = new WebSocket(this._private_url_stream_base + `/${symbol.toLowerCase()}@kline_${timeFrame}`);
-      console.log(this.webSocket.url);
 
       this.webSocket.onmessage = e => {
         let k = JSON.parse(e.data).k;
@@ -855,7 +854,7 @@ class BinanceFuturesDataProvider extends DataProviderBase {
   }
 
   getVolumeProfile(symbol, timeFrom, timeTo, timeFrame, numberOfCandles, pipSize, volumeMode, force_reset) {
-    this.webSocket.close();
+    if(this.webSocket)this.webSocket.close();
     this.reset(symbol, force_reset);
     timeFrom = fixTimeFrom(timeFrom, timeFrame);
     numberOfCandles = Math.max(numberOfCandles, 1);
