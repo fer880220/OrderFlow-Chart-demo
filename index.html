@@ -3,6 +3,23 @@
 <meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="Web site created using create-react-app">
 <title>OrderFlow Chart demo</title>
 <link href="files/index.css" rel="stylesheet" type="text/css">
+<script>
+var a = navigator.userAgent;
+var agents = new Array("iPhone","iPad","Android","SymbianOS", "Windows Phone","iPod");
+var flag = true;
+for(var i = 0; i < agents.length; i++)
+{
+	if(a.indexOf(agents[i]) > 0)
+	{
+		flag = false;
+		break;
+	}
+}
+
+if(!flag)
+{
+	alert("Lo sentimos. Por el momento la app solo está disponible para versión Desktop/PC");
+}</script>
 </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
