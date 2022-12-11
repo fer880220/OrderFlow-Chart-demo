@@ -427,8 +427,8 @@ class BinanceFuturesDataProvider extends DataProviderBase {
 
   constructor() {
     super();
-    this._private_url_base = 'https://fapi.binance.com';
-    this._private_url_stream_base = 'wss://fstream.binance.com/ws';
+    this._private_url_base = 'https://api.binance.com';
+    this._private_url_stream_base = 'wss://stream.binance.com/ws';
     this.funPosGetAgg = null;
     this.funPosGetAggDB = null;
     this.timesInMinute = 2300;
@@ -447,7 +447,7 @@ class BinanceFuturesDataProvider extends DataProviderBase {
   }
 
   getAllPairs() {
-    var query = this._private_url_base + '/fapi/v1/ticker/price';
+    var query = this._private_url_base + '/api/v3/ticker/price';
     var myRequest = new XMLHttpRequest();
     myRequest.open('GET', query, true);
 
@@ -516,7 +516,7 @@ class BinanceFuturesDataProvider extends DataProviderBase {
   getCandles(symbol, timeFrom, timeTo, timeFrame, volumeMode, fstreamDelegate) {
     if(this.webSocket)this.webSocket.close();
     this.reset(symbol);
-    var query = this._private_url_base + `/fapi/v1/klines?symbol=${symbol}` + `&interval=${timeFrame}&startTime=${timeFrom}&endTime=${timeTo}`;
+    var query = this._private_url_base + `/api/v3/klines?symbol=${symbol}` + `&interval=${timeFrame}&startTime=${timeFrom}&endTime=${timeTo}`;
     var myRequest = new XMLHttpRequest();
     myRequest.open('GET', query, true);
 
@@ -617,7 +617,7 @@ class BinanceFuturesDataProvider extends DataProviderBase {
     //{"code":-1003,"msg":"Too many requests; current limit of IP(152.207.216.84) is 2400 requests per minute. Please use the websocket for live updates to avoid polling the API."}
     timeFrom = timeFrom - timeFrom % 60000; //1min
 
-    var query = this._private_url_base + `/fapi/v1/aggTrades?symbol=${symbol}` + (fromId === -1 ? `&startTime=${timeFrom}&limit=1000` : `&fromId=${fromId}&limit=1000`);
+    var query = this._private_url_base + `/api/v3/aggTrades?symbol=${symbol}` + (fromId === -1 ? `&startTime=${timeFrom}&limit=1000` : `&fromId=${fromId}&limit=1000`);
     var myRequest = new XMLHttpRequest();
     myRequest.open('GET', query, true);
 
