@@ -1693,7 +1693,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     columnNumber: 4
   }
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-  href: "https://www.linkedin.com/in/fernando-fonseca-acosta-1aab08a7",
+  href: "https://github.com/fer880220/OrderFlow-Chart-demo",
   target: "_blank",
   __self: undefined,
   __source: {
@@ -1740,14 +1740,14 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     lineNumber: 369,
     columnNumber: 17
   }
-}, "As\xED ayudar\xE1s a este proyecto"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
+}, "On this way, you will help this project."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
     lineNumber: 370,
     columnNumber: 5
   }
-}, "Detalles de la donaci\xF3n a: jovtal22@gmail.com"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+}, "Details of the donation to: jovtal22@gmail.com"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
   id: "cerrar",
   href: "#",
   __self: undefined,
