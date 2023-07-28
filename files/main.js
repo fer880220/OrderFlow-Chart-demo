@@ -1608,7 +1608,7 @@ class OpcionesDonar extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Compone
 
 }
 
-const pres_txt = ["Bienvenido a la versión 0.1 de OrderFlow-Chart. Ahora tienes acceso al indicador Order Flow en la temporalidad de 1m. En el futuro se harán mejoras, dependiendo de la disponibilidad de tiempo de los desarrolladores. Puedes convertirte en colaborador de este proyecto a través de una donación. Para saber sobre Order Flow visita ", "OrderFlow-Chart"];
+const pres_txt = ["Welcome to version 0.1 of OrderFlow-Chart. You now have access to the Order Flow indicator on the 1-minute timeframe. In the future, improvements will be made based on the developers' availability of time. You can become a collaborator of this project through a donation. ", "OrderFlow-Chart"];
 
 function copyToClipboard(text) {
   var textField = document.createElement('textarea');
@@ -1645,7 +1645,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     columnNumber: 1
   }
 }, pres_txt[0], /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-  href: "https://www.armagafx.com",
+  href: "",
   target: "_blank",
   class: "los-de-arriba",
   __self: undefined,
@@ -1654,7 +1654,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     lineNumber: 361,
     columnNumber: 33
   }
-}, "ArmagaFX")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+}, "")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
   class: "menuCSS3",
   __self: undefined,
   __source: {
@@ -1685,7 +1685,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     lineNumber: 364,
     columnNumber: 8
   }
-}, "Ocultar")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+}, "Hidden")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
@@ -1701,7 +1701,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     lineNumber: 365,
     columnNumber: 8
   }
-}, "Contacto")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+}, "Contact")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
@@ -1716,7 +1716,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     lineNumber: 366,
     columnNumber: 8
   }
-}, "\u2665Donar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+}, "\u2665Donate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
   id: "popDonate",
   class: "overlay",
   __self: undefined,
@@ -1756,7 +1756,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     lineNumber: 371,
     columnNumber: 17
   }
-}, "Cerrar"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+}, "Close"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
   class: "popupContent",
   __self: undefined,
   __source: {
@@ -1913,7 +1913,7 @@ react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEB
     lineNumber: 390,
     columnNumber: 5
   }
-}, "copiar"))))))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
+}, "copy"))))))))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("table", {
   __self: undefined,
   __source: {
     fileName: _jsxFileName,
